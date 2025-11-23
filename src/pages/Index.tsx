@@ -1,3 +1,5 @@
+
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -24,8 +26,12 @@ import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { Variants } from "framer-motion";
+import { WaitlistDialog } from "@/components/WaitlistDialog";
 
 const Index = () => {
+
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
+
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     whileInView: { opacity: 1, y: 0 },
@@ -206,9 +212,10 @@ const Index = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <a href="https://aethera-app.vercel.app/">
+              {/*<a href="https://aethera-app.vercel.app/">*/}
                 <Button
                   size="lg"
+                  onClick={() => setWaitlistOpen(true)}
                   className="bg-gradient-to-r from-energy to-accent text-white font-semibold px-8 shadow-lg hover:shadow-xl transition-all hover:from-energy/90 hover:to-accent/90 group"
                 >
                   Explore the Network
@@ -220,7 +227,7 @@ const Index = () => {
                     <ArrowRight className="w-5 h-5" />
                   </motion.div>
                 </Button>
-              </a>
+              {/*</a>*/}
             </motion.div>
 
             <motion.div
@@ -228,15 +235,16 @@ const Index = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <a href="https://aethera-app.vercel.app/">
+              {/*<a href="https://aethera-app.vercel.app/">*/}
                 <Button
                   variant="outline"
                   size="lg"
+                  onClick={() => setWaitlistOpen(true)}
                   className="bg-foreground/5 backdrop-blur-md border-energy/30 text-foreground font-semibold hover:bg-energy/10 hover:border-energy/60 hover:text-white transition-all px-8"
                 >
-                  Join Now
+                  Join Waitlist
                 </Button>
-              </a>
+              {/*</a>*/}
             </motion.div>
           </motion.div>
 
@@ -835,9 +843,10 @@ const Index = () => {
                       whileTap={{ scale: 0.95 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <a href="https://aethera-app.vercel.app/">
+                      {/*<a href="https://aethera-app.vercel.app/">*/}
                         <Button
-                          size="lg"git init
+                          size="lg"
+                          onClick={() => setWaitlistOpen(true)}
                           className="bg-gradient-to-r from-energy to-accent text-white font-semibold px-8 shadow-lg hover:shadow-xl transition-all group"
                         >
                           Check Now
@@ -849,7 +858,7 @@ const Index = () => {
                             <ArrowRight className="w-5 h-5" />
                           </motion.div>
                         </Button>
-                      </a>
+                      {/*</a>*/}
                     </motion.div>
 
                     <motion.div
@@ -884,6 +893,7 @@ const Index = () => {
       </section>
 
       <StackedCircularFooter />
+      <WaitlistDialog open={waitlistOpen} onOpenChange={setWaitlistOpen} />
     </div>
   );
 };
