@@ -1,62 +1,93 @@
+/* Import Manrope Font - Must be the first line */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Import Manrope Font */
+/*@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');*/
 
 @layer base {
   :root {
-    /* Aethera Design System - Futuristic Energy Theme */
-    --background: 220 85% 6%;
-    --foreground: 210 40% 98%;
+    /* Aethera Design System - Color Palette
+      Green: #00D47E -> 156 100% 42%
+      Black: #1E1E1E -> 0 0% 12%
+      Grey:  #8D959D -> 210 8% 58%
+      Light: #F2F4F4 -> 180 5% 95%
+      White: #FFFFFF -> 0 0% 100%
+    */
 
-    --card: 220 80% 8%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 220 80% 8%;
-    --popover-foreground: 210 40% 98%;
-
-    /* Deep midnight blue for primary */
-    --primary: 220 85% 10%;
-    --primary-foreground: 210 40% 98%;
-
-    /* Emerald green for energy/growth */
-    --energy: 160 84% 39%;
-    --energy-foreground: 220 85% 10%;
+    /* Main Background: #F2F4F4 (Aethera Light) */
+    --background: 180 5% 95%;
     
-    /* Solar gold for accents */
-    --solar: 43 96% 56%;
-    --solar-foreground: 220 85% 10%;
+    /* Main Text: #1E1E1E (Aethera Black) */
+    --foreground: 0 0% 12%;
 
-    --secondary: 220 70% 15%;
-    --secondary-foreground: 210 40% 98%;
+    /* Card Backgrounds: #FFFFFF (Aethera White) */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
 
-    --muted: 220 60% 12%;
-    --muted-foreground: 215 20% 65%;
+    /* Popovers: #FFFFFF (Aethera White) */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
 
-    --accent: 160 84% 39%;
-    --accent-foreground: 220 85% 10%;
+    /* Primary: #00D47E (Aethera Green) */
+    --primary: 156 100% 42%;
+    /* Primary Foreground: #1E1E1E (Black) for high contrast on bright green */
+    --primary-foreground: 0 0% 12%;
+
+    /* Secondary: #FFFFFF or slightly darker light shade */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 12%;
+
+    /* Muted: #F2F4F4 or slightly darker for distinction */
+    --muted: 210 8% 90%; 
+    /* Muted Text: #8D959D (Aethera Grey) */
+    --muted-foreground: 210 8% 58%;
+
+    /* Accent: #00D47E (Aethera Green) */
+    --accent: 156 100% 42%;
+    --accent-foreground: 0 0% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 60% 18%;
-    --input: 220 60% 18%;
-    --ring: 160 84% 39%;
-
-    --radius: 0.75rem;
-
-    /* Glow effects */
-    --glow-energy: 160 84% 39%;
-    --glow-solar: 43 96% 56%;
+    /* Borders: Light version of Aethera Grey */
+    --border: 210 8% 85%;
+    --input: 210 8% 85%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 85% 10%) 0%, hsl(220 70% 15%) 50%, hsl(160 84% 15%) 100%);
-    --gradient-energy: linear-gradient(90deg, hsl(160 84% 39%) 0%, hsl(43 96% 56%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    /* Ring: Aethera Green */
+    --ring: 156 100% 42%;
+
+    --radius: 0.5rem;
+  }
+
+  /* Dark Mode Support (Optional, mapping Black as background) */
+  .dark {
+    --background: 0 0% 12%; /* Black */
+    --foreground: 180 5% 95%; /* Light */
+    
+    --card: 0 0% 12%;
+    --card-foreground: 180 5% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 180 5% 95%;
+
+    --primary: 156 100% 42%;
+    --primary-foreground: 0 0% 12%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 180 5% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 210 8% 58%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 180 5% 95%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
   }
 }
 
@@ -67,5 +98,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Manrope', sans-serif;
   }
 }
