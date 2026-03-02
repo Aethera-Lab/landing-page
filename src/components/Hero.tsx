@@ -1,7 +1,11 @@
 import React from 'react';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenWaitlist: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenWaitlist }) => {
   return (
     <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-20 pb-32 md:pt-32 md:pb-48 flex flex-col items-center justify-center text-center">
       
@@ -29,7 +33,10 @@ export const Hero: React.FC = () => {
           
           {/* Primary CTA */}
           <div className="group flex flex-col items-center">
-            <button className="w-full sm:w-auto px-8 py-4 bg-primary text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-2 hover:bg-[#00b56b] transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20">
+            <button 
+              onClick={onOpenWaitlist}
+              className="w-full sm:w-auto px-8 py-4 bg-primary text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-2 hover:bg-[#00b56b] transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20"
+            >
               Get early access <ArrowRight size={20} />
             </button>
             <p className="mt-3 text-sm text-muted-foreground font-medium">

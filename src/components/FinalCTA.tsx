@@ -2,7 +2,11 @@ import React from 'react';
 import { ArrowRight, Mail } from 'lucide-react';
 import { Reveal } from './Reveal';
 
-export const FinalCTA: React.FC = () => {
+interface FinalCTAProps {
+  onOpenWaitlist: () => void;
+}
+
+export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenWaitlist }) => {
   return (
     <section className="bg-foreground w-full py-24 px-6 md:px-12 md:py-32 relative overflow-hidden">
       
@@ -28,7 +32,7 @@ export const FinalCTA: React.FC = () => {
 
         {/* Subline */}
         <Reveal delay={200}>
-            <p className="text-xl md:text-2xl text-aethera-grey mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
             Get funding faster. Build more projects. <br className="hidden md:block"/> Earn verifiable returns.
             </p>
         </Reveal>
@@ -37,7 +41,10 @@ export const FinalCTA: React.FC = () => {
         <Reveal delay={300}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             
-            <button className="w-full sm:w-auto px-8 py-5 bg-primary text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-3 hover:bg-[#00b56b] transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(0,212,126,0.3)]">
+            <button 
+              onClick={onOpenWaitlist}
+              className="w-full sm:w-auto px-8 py-5 bg-primary text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-3 hover:bg-[#00b56b] transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(0,212,126,0.3)]"
+            >
                 Join now — 450+ already on board <ArrowRight size={20} />
             </button>
 

@@ -17,8 +17,8 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Right Side: Contact Email */}
-        <a href="mailto:hello@aethera.xyz" className="text-muted-foreground hover:text-white transition-colors font-medium bg-white/5 px-4 py-2 rounded-full border border-white/5 hover:bg-white/10">
-          hello@aethera.xyz
+        <a href="mailto:get.aethera@gmail.com" className="text-muted-foreground hover:text-white transition-colors font-medium bg-white/5 px-4 py-2 rounded-full border border-white/5 hover:bg-white/10">
+          get.aethera@gmail.com
         </a>
 
       </div>
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
          </div>
          
          <div className="flex items-center gap-1">
-           © {new Date().getFullYear()} Aethera Platform
+           © {new Date().getFullYear()} Aethera
          </div>
       </div>
     </footer>

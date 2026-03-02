@@ -34,7 +34,7 @@ export const SolutionSection: React.FC = () => {
 
                 <Reveal delay={300}>
                   <div className="pt-4">
-                      <button className="group inline-flex items-center gap-3 px-8 py-4 bg-primary-foreground text-foreground font-bold text-lg rounded-full hover:bg-[#00b56b] transition-all transform hover:-translate-y-1">
+                      <button className="group inline-flex items-center gap-3 px-8 py-4 bg-accent text-foreground font-bold text-lg rounded-full hover:bg-[#00b56b] transition-all transform hover:-translate-y-1">
                           Start a project <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                       </button>
                       <p className="mt-4 text-sm text-muted-foreground">Get funded faster.</p>

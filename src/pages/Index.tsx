@@ -21,12 +21,12 @@ import {
   Sparkles
 } from "lucide-react";
 import heroImage from "@/assets/vertical.jpg";
-import bgImage from "@/assets/bg.png";
+import bgImage from "@/assets/background.png";
 import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer";
 import { Variants } from "framer-motion";
-import { WaitlistDialog } from "@/components/WaitlistDialog";
+//import { WaitlistDialog } from "@/components/WaitlistDialog";
 import { Hero } from "@/components/Hero";
 import { ProblemSection } from "@/components/ProblemSection";
 import { SolutionSection } from "@/components/SolutionSection";
@@ -36,10 +36,12 @@ import { TargetAudience } from "@/components/TargetAudience";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
+import { WaitlistModal } from '@/components/WaitlistModal';
 
 const Index = () => {
 
-  const [waitlistOpen, setWaitlistOpen] = useState(false);
+  //const [waitlistOpen, setWaitlistOpen] = useState(false);
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
@@ -180,7 +182,7 @@ const Index = () => {
         scrollToExpand="Scroll to Explore"
         textBlend
       >
-        <Hero />
+        <Hero onOpenWaitlist={() => setIsWaitlistOpen(true)} />
       </ScrollExpandMedia>
 
       {/* Problem Section */}
@@ -190,12 +192,13 @@ const Index = () => {
       <Features />
       <TargetAudience />
       <FAQ />
-      <FinalCTA />
+      <FinalCTA onOpenWaitlist={() => setIsWaitlistOpen(true)} />
       <Footer />
     
 
       {/*<StackedCircularFooter />*/}
-      <WaitlistDialog open={waitlistOpen} onOpenChange={setWaitlistOpen} />
+      {/*<WaitlistDialog open={waitlistOpen} onOpenChange={setWaitlistOpen} />*/}
+      <WaitlistModal isOpen={isWaitlistOpen} onClose={() => setIsWaitlistOpen(false)} />
     </div>
   );
 };
