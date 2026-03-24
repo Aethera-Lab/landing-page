@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom'
 
 export const Footer: React.FC = () => {
   return (
@@ -28,13 +29,13 @@ export const Footer: React.FC = () => {
          <div className="flex items-center gap-3">
             <span>Early access & pilots</span>
             <span>·</span>
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>·</span>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
          </div>
          
          <div className="flex items-center gap-1">
-           © {new Date().getFullYear()} Aethera
+           © {new Date().getFullYear()} BayLeaf OÜ · Aethera Energy Private Limited
          </div>
       </div>
     </footer>
