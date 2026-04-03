@@ -27,7 +27,11 @@ export const Footer: React.FC = () => {
       {/* Trust Line & Legal */}
       <div className="max-w-[1440px] mx-auto mt-10 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 text-xs text-white/30">
          <div className="flex items-center gap-3">
-            <span>Early access & pilots</span>
+            <Link
+              to="/not-found"
+            >
+              Early access & pilots
+            </Link>
             <span>·</span>
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>·</span>

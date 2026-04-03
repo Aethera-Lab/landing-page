@@ -1,6 +1,7 @@
 import React from 'react';
 import { Check, ArrowRight, HardHat, TrendingUp } from 'lucide-react';
 import { Reveal } from './Reveal';
+import { Link } from 'react-router-dom';
 
 export const TargetAudience: React.FC = () => {
   return (
@@ -49,9 +50,12 @@ export const TargetAudience: React.FC = () => {
                         ))}
                     </ul>
 
-                    <button className="w-full py-4 bg-primary text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-2 hover:bg-[#00b56b] transition-all transform hover:-translate-y-1">
+                    <Link 
+                        to="/not-found"
+                        className="w-full py-4 bg-primary text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-2 hover:bg-[#00b56b] transition-all transform hover:-translate-y-1"
+                    >
                         Submit a project <ArrowRight size={20} />
-                    </button>
+                    </Link>
                 </div>
             </Reveal>
 
@@ -81,9 +85,12 @@ export const TargetAudience: React.FC = () => {
                         ))}
                     </ul>
 
-                    <button className="w-full py-4 bg-white text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-2 hover:bg-background hover:scale-[1.02] transition-all">
+                    <Link 
+                        to="/not-found"
+                        className="w-full py-4 bg-white text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-2 hover:bg-background hover:scale-[1.02] transition-all"
+                    >
                         Explore projects <ArrowRight size={20} />
-                    </button>
+                    </Link>
                 </div>
             </Reveal>
 

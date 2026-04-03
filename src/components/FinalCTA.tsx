@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Mail } from 'lucide-react';
 import { Reveal } from './Reveal';
+import { Link } from 'react-router-dom';
 
 interface FinalCTAProps {
   onOpenWaitlist: () => void;
@@ -48,9 +49,12 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenWaitlist }) => {
                 Join now — 450+ already on board <ArrowRight size={20} />
             </button>
 
-            <button className="w-full sm:w-auto px-8 py-5 bg-white/5 border border-white/10 text-white font-bold text-lg rounded-full flex items-center justify-center gap-3 hover:bg-white/10 transition-all">
+            <Link
+              to="/not-found"
+              className="w-full sm:w-auto px-8 py-5 bg-white/5 border border-white/10 text-white font-bold text-lg rounded-full flex items-center justify-center gap-3 hover:bg-white/10 transition-all"
+            >
                 Request pilot <Mail size={20} />
-            </button>
+            </Link>
 
             </div>
         </Reveal>

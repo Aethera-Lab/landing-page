@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, PlayCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeroProps {
   onOpenWaitlist: () => void;
@@ -41,15 +42,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWaitlist }) => {
             </button>
             <p className="mt-3 text-sm text-muted-foreground font-medium">
               <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-              Join 450+ waitlist
+              Join 4050+ waitlist
             </p>
           </div>
 
           {/* Secondary CTA */}
           <div className="group flex flex-col items-center">
-            <button className="w-full sm:w-auto px-8 py-4 bg-transparent border border-muted-foreground/30 text-foreground font-semibold text-lg rounded-full flex items-center justify-center gap-2 hover:border-foreground hover:bg-white transition-all">
+            <Link 
+              to="/not-found"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-muted-foreground/30 text-foreground font-semibold text-lg rounded-full flex items-center justify-center gap-2 hover:border-foreground hover:bg-white transition-all"
+            >
               See a demo <PlayCircle size={20} />
-            </button>
+            </Link>
             <p className="mt-3 text-sm text-muted-foreground font-medium">
               Watch 90s demo
             </p>

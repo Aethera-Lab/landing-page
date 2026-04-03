@@ -37,6 +37,7 @@ import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { WaitlistModal } from '@/components/WaitlistModal';
+import { Blogs } from "@/components/Blogs";
 
 const Index = () => {
 
@@ -191,6 +192,7 @@ const Index = () => {
       <HowItWorks />
       <Features />
       <TargetAudience />
+      <Blogs />
       <FAQ />
       <FinalCTA onOpenWaitlist={() => setIsWaitlistOpen(true)} />
       <Footer />
