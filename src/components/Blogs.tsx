@@ -5,12 +5,13 @@ const posts = [
   {
     id: 1,
     category: "DePIN",
-    title: "How Regenerative Finance (ReFi) Aims to fix the $3 Trillion Climate Energy Gridlock",
+    title: "The $3 Trillion Problem No One Can Solve… Except This New Financial Model?",
     excerpt:
       "ReFi vs Traditional green finance, why $3.3T in clean energy investment still isn't enough, and why the system is broken at the capital distribution layer.",
-    date: "Jun 12, 2026",
-    readTime: "5 min read",
+    date: "April 4, 2026",
+    readTime: "8 min read",
     image: "/blogs-1.jpg",
+    url: "https://medium.com/@akashpanda007/the-3-trillion-problem-no-one-can-solve-except-this-new-financial-model-0f848750c380",
   },
   {
     id: 2,
@@ -18,9 +19,10 @@ const posts = [
     title: "India Has 143 GW Of Solar. So Why Are Profitable Projects Still Dying For Lack Of Capital?",
     excerpt:
       "The missing middle problem - why ₹2Cr projects fall through every gap in the financial system.",
-    date: "May 28, 2026",
-    readTime: "7 min read",
+    date: "April 5, 2026",
+    readTime: "10 min read",
     image: "/blogs-2.jpg",
+    url: "https://medium.com/@akashpanda007/india-has-143-gw-of-solar-so-why-are-profitable-projects-still-dying-for-lack-of-capital-de2f5e7a13c1",
   },
   {
     id: 3,
@@ -28,9 +30,10 @@ const posts = [
     title: "The $350 Billion Gap Nobody Is Talking About",
     excerpt:
       "India's renewable energy financing shortfall, who is affected, and what happens if it stays unfilled.",
-    date: "May 10, 2026",
-    readTime: "6 min read",
+    date: "April 6, 2026",
+    readTime: "9 min read",
     image: "/blogs-4.jpg",
+    url: "https://medium.com/@akashpanda007/the-350-billion-gap-nobody-is-talking-about-270a65fc3efc",
   },
   {
     id: 4,
@@ -38,9 +41,10 @@ const posts = [
     title: "Why Your Bank Will Never Fund The Energy Transition Fast Enough",
     excerpt:
       "Credit committees, 9-month loan processing, collateral requirements, the structural incompatibility of traditional finance with distributed solar.",
-    date: "Apr 22, 2025",
+    date: "Apr 22, 2026",
     readTime: "4 min read",
     image: "/blogs-3.jpg",
+    url: "/not-found",
   },
   {
     id: 5,
@@ -48,9 +52,10 @@ const posts = [
     title: "Solar Has Already Won The Technology War. Now It Needs To Win The Capital War",
     excerpt:
       "Cost per watt curves, grid parity achieved - the only bottleneck left is financing speed.",
-    date: "Apr 8, 2025",
+    date: "May 8, 2026",
     readTime: "5 min read",
     image: "blogs-5.jpg",
+    url: "/not-found",
   },
 ];
 
@@ -98,58 +103,66 @@ export const Blogs = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post, i) => (
-            <motion.article
+            <a
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
               key={post.id}
-              className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all duration-300 cursor-pointer"
-              variants={cardVariants}
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
             >
-              {/* Thumbnail */}
-              <div className="relative h-48 overflow-hidden bg-muted">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                {/* Category badge over image */}
-                {/*<span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/90 backdrop-blur-sm border border-border text-xs font-bold text-foreground">
-                  <Tag size={10} className="text-primary" />
-                  {post.category}
-                </span>*/}
-              </div>
-
-              {/* Content */}
-              <div className="flex flex-col flex-1 p-6 gap-4">
-                <div className="flex-1 space-y-2">
-                  <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors duration-200 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                </div>
-
-                {/* Footer row */}
-                <div className="flex items-center justify-between pt-2 border-t border-border">
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                    <span>{post.date}</span>
-                    <span className="w-1 h-1 rounded-full bg-border" />
-                    {/*<span className="flex items-center gap-1">
-                      <Clock size={11} />
-                      {post.readTime}
-                    </span>*/}
-                  </div>
-                  <ArrowRight
-                    size={15}
-                    className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"
+              <motion.article
+                //key={post.id}
+                className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all duration-300 cursor-pointer"
+                variants={cardVariants}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              >
+                {/* Thumbnail */}
+                <div className="relative h-48 overflow-hidden bg-muted">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  {/* Category badge over image */}
+                  {/*<span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/90 backdrop-blur-sm border border-border text-xs font-bold text-foreground">
+                    <Tag size={10} className="text-primary" />
+                    {post.category}
+                  </span>*/}
                 </div>
-              </div>
-            </motion.article>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1 p-6 gap-4">
+                  <div className="flex-1 space-y-2">
+                    <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors duration-200 line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                  </div>
+
+                  {/* Footer row */}
+                  <div className="flex items-center justify-between pt-2 border-t border-border">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                      <span>{post.date}</span>
+                      <span className="w-1 h-1 rounded-full bg-border" />
+                      {/*<span className="flex items-center gap-1">
+                        <Clock size={11} />
+                        {post.readTime}
+                      </span>*/}
+                    </div>
+                    <ArrowRight
+                      size={15}
+                      className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"
+                    />
+                  </div>
+                </div>
+              </motion.article>
+            </a>
           ))}
         </div>
 

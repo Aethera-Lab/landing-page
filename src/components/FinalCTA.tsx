@@ -18,8 +18,15 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenWaitlist }) => {
         
         {/* Brand Mark */}
         <Reveal>
-            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-10 border border-white/5 shadow-2xl backdrop-blur-sm">
+            {/*<div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-10 border border-white/5 shadow-2xl backdrop-blur-sm">
                 <div className="w-6 h-6 bg-primary rounded-sm"></div>
+            </div>*/}
+            <div className="flex items-center justify-center mx-auto mb-10">
+              <img
+                src="/atheraLogo.png"
+                alt="Aethera"
+                className="h-16 w-auto object-contain"
+              />
             </div>
         </Reveal>
 
@@ -46,7 +53,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenWaitlist }) => {
               onClick={onOpenWaitlist}
               className="w-full sm:w-auto px-8 py-5 bg-primary text-foreground font-bold text-lg rounded-full flex items-center justify-center gap-3 hover:bg-[#00b56b] transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(0,212,126,0.3)]"
             >
-                Join now — 450+ already on board <ArrowRight size={20} />
+                Join now — 4050+ already on board <ArrowRight size={20} />
             </button>
 
             <Link
