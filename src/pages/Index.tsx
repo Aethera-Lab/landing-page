@@ -3,13 +3,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { 
-  Zap, 
-  TrendingUp, 
-  Globe, 
-  Lock, 
-  Coins, 
-  Users, 
+import {
+  Zap,
+  TrendingUp,
+  Globe,
+  Lock,
+  Coins,
+  Users,
   ArrowRight,
   Battery,
   Sun,
@@ -38,6 +38,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { WaitlistModal } from '@/components/WaitlistModal';
 import { Blogs } from "@/components/Blogs";
+import { DashboardPreview } from "@/components/DashboardPreview";
 
 const Index = () => {
 
@@ -118,7 +119,7 @@ const Index = () => {
       },
     },
   }
-  
+
   const dotVariants = {
     animate: {
       opacity: [0.5, 1, 0.5],
@@ -138,14 +139,14 @@ const Index = () => {
     viewport: { once: true },
     whileHover: { y: -8, transition: { duration: 0.3 } },
   } as const;
-  
+
   const listItemVariants = {
     initial: { opacity: 0, x: -20 },
     whileInView: { opacity: 1, x: 0 },
     transition: { duration: 0.6, ease: "easeOut" },
     viewport: { once: true },
   } as const;
-  
+
   const iconVariants = {
     whileHover: {
       scale: 1.1,
@@ -163,7 +164,7 @@ const Index = () => {
     initial: { opacity: 0, scale: 0.8 },
     whileInView: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
   }
-  
+
   const pulseGlow = {
     animate: {
       boxShadow: ["0 0 0 0 rgba(var(--energy-rgb), 0.7)", "0 0 0 20px rgba(var(--energy-rgb), 0)"],
@@ -189,6 +190,7 @@ const Index = () => {
       {/* Problem Section */}
       <ProblemSection />
       <SolutionSection />
+      <DashboardPreview />
       <HowItWorks />
       <Features />
       <TargetAudience />
@@ -196,7 +198,7 @@ const Index = () => {
       <FAQ />
       <FinalCTA onOpenWaitlist={() => setIsWaitlistOpen(true)} />
       <Footer />
-    
+
 
       {/*<StackedCircularFooter />*/}
       {/*<WaitlistDialog open={waitlistOpen} onOpenChange={setWaitlistOpen} />*/}
